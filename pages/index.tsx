@@ -1,10 +1,8 @@
-import { Text } from '@chakra-ui/layout'
-import type { NextPage } from 'next'
+import { Text } from "@chakra-ui/layout";
+import type { NextPage } from "next";
 
 const Home: NextPage = () => {
-  return (
-    <Text>hellp</Text>
-      )
-}
+  return <Text>hellp</Text>;
+};
 
-export default Home
+export default Home;
