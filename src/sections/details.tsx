@@ -1,8 +1,13 @@
 import type { NextPage } from "next";
 import { Container, Flex, VStack } from "@chakra-ui/react"
-import { Checkbox, Button, Select, Heading, Text, SimpleGrid, GridItem, FormControl, FormLabel, Input } from "@chakra-ui/react"
+import { useBreakpointValue, useColorMode, useColorModeValue, Checkbox, Button, Select, Heading, Text, SimpleGrid, GridItem, FormControl, FormLabel, Input } from "@chakra-ui/react"
+
 
 const Cart = () => {
+  const { toggleColorMode } = useColorMode();
+  const bgColor = useColorModeValue('gray.600','whiteAlpha.600');
+  const textColor = useColorModeValue('blue.600','red.400');
+  const colSpan = useBreakpointValue({base:2,md:1});
   return (
   <VStack
     w="full"
@@ -10,21 +15,22 @@ const Cart = () => {
     p={10}
     spacing={10}
     alignItems="flex-start"
-    bg="gray.50"
+    bg={bgColor}
+    
   >
     <VStack spacing={3} alignItems="flex-start">
       <Heading size='2xl'>Fuck Yes.</Heading>
-      <Text>Testing my text nigga</Text>
+      <Text color={textColor}>Testing my text nigga</Text>
     </VStack>
     
     <SimpleGrid columns={2} columnGap={3} rowGap={3}>
-      <GridItem colSpan={1}>
+      <GridItem colSpan={colSpan}>
         <FormControl>
           <FormLabel>First Name</FormLabel>
           <Input placeholder="John"></Input>
         </FormControl>
       </GridItem>
-      <GridItem colSpan={1}>
+      <GridItem colSpan={colSpan}>
         <FormControl>
           <FormLabel>Last Name</FormLabel>
           <Input placeholder="Doe"></Input>
@@ -37,7 +43,7 @@ const Cart = () => {
         </FormControl>
       </GridItem>
     </SimpleGrid>
-    <GridItem colSpan={1}>
+    <GridItem colSpan={colSpan}>
         <FormControl>
           <FormLabel>Country</FormLabel>
           <Select>
