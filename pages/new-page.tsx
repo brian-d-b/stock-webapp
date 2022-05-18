@@ -13,7 +13,6 @@ const IndexPage: NextPage = () => (
       direction={{base: 'column-reverse', md: 'row'}}>
     <Details />
     <Cart />
-    <BTCPrice/>
     </Flex>
     
   </Container>
