@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 export default function StonkGrabber() {
 
-  const [resultArray, setResultArray] = useState();
+  const [resultArray, setResultArray] = useState(null);
 
   useEffect(() => {
     var axios = require("axios").default;
