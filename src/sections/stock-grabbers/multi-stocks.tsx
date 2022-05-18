@@ -22,7 +22,7 @@ export default function StonkGrabber() {
     };
   
     console.log("Making GET Request");
-    var getPrice = axios.request(options).then(response => {
+    var getPrice = axios.request(options).then((response:any) => {
      //This logs the entire output to console for testing purposes / inspecting
      console.log(response);
 
