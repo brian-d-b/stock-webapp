@@ -15,7 +15,7 @@ const Cart = () => {
     >
     
     <VStack>
-      <Heading>Sup Nigga</Heading>
+      <Heading>Bitcoin Price</Heading>
       <Text>Nigga Nuts</Text>
     </VStack>
 

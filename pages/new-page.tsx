@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 import { Container, Flex, VStack } from "@chakra-ui/react"
 import Cart from "../src/sections/cart"
 import Details from "../src/sections/details"
+import BTCPrice from "./btc-price";
 
 
 const IndexPage: NextPage = () => (
@@ -13,6 +14,7 @@ const IndexPage: NextPage = () => (
       direction={{base: 'column-reverse', md: 'row'}}>
     <Details />
     <Cart />
+    <BTCPrice/>
     </Flex>
     
   </Container>

@@ -3,7 +3,7 @@ import { Container, Flex, VStack } from "@chakra-ui/react"
 import { useBreakpointValue, useColorMode, useColorModeValue, Checkbox, Button, Select, Heading, Text, SimpleGrid, GridItem, FormControl, FormLabel, Input } from "@chakra-ui/react"
 
 
-const Cart = () => {
+const Details = () => {
   const { toggleColorMode } = useColorMode();
   const bgColor = useColorModeValue('gray.600','whiteAlpha.600');
   const textColor = useColorModeValue('blue.600','red.400');
@@ -68,4 +68,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default Details;
