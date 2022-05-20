@@ -5,16 +5,43 @@ import Cart from "../cart"
 import Details from "../details"
 
 import { useEffect, useState } from "react";
+import { concat } from "lodash";
 
-export default function StonkGrabber() {
 
-  const [resultArray, setResultArray] = useState(null);
+
+export default function StonkGrabber(stockArray=['GLD','GOLD','SLV','BTC-USD','SPY']) {
+
+  const [resultArray, setResultArray] = useState();
+
+
+  function formatStockURL() {
+    const baseURL = 'https://yfapi.net/v6/finance/quote?region=US&lang=en&symbols=';
+    var URLbuilder = '';
+
+    //If we are only looking up one stock, we just want to append the symbol and return
+    if (stockArray.length == 1) {
+      return baseURL.concat(stockArray[0]);
+    }
+    //Otherwise, we want to loop through the array and append
+    else {
+      for (let i = 0; i < stockArray.length; i++) {
+        URLbuilder = URLbuilder.concat(stockArray[i],'%2C');
+      }
+      //We just need to delete the last 'comma' inserted, aka the %2C
+      URLbuilder = URLbuilder.substring(0,URLbuilder.length - 3);
+      console.log("URLBUilt: ",URLbuilder);
+      return baseURL.concat(URLbuilder);
+
+    }
+
+  }
+
 
   useEffect(() => {
     var axios = require("axios").default;
     var options = {
       method: 'GET',
-      url: 'https://yfapi.net/v6/finance/quote?region=US&lang=en&symbols=SLV%2CGLD%2CBTC-USD%2CSPY%2C%3DX',
+      url: formatStockURL(),
       params: {modules: 'defaultKeyStatistics,assetProfile'},
      headers: {
        'x-api-key': '3WtamPEn6CaP0O4rrs4m9500HJgcQPId5Xw42LgP'
@@ -42,7 +69,7 @@ export default function StonkGrabber() {
     }).catch(function (error) {
       console.error(error);
     });
-  })
+  },[])
   
 
   const resulty = resultArray;

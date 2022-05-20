@@ -15,8 +15,8 @@ const Cart = () => {
     >
     
     <VStack>
-      <Heading>Bitcoin Price</Heading>
-      <Text>Nigga Nuts</Text>
+      <Heading>Template</Heading>
+      <Text>Shit mane I just be typing</Text>
     </VStack>
 
     <SimpleGrid columns={2}>

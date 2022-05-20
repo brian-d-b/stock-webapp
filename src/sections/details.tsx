@@ -20,7 +20,7 @@ const Details = () => {
   >
     <VStack spacing={3} alignItems="flex-start">
       <Heading size='2xl'>Fuck Yes.</Heading>
-      <Text color={textColor}>Testing my text nigga</Text>
+      <Text color={textColor}>Testing my text dawg</Text>
     </VStack>
     
     <SimpleGrid columns={2} columnGap={3} rowGap={3}>

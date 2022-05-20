@@ -4,15 +4,16 @@ export default function App() {
   const [posts, setPosts] = useState([]);
 
   const fetchPost = async () => {
+    console.log("Making Get Request");
     const response = await fetch(
       "https://api.chucknorris.io/jokes/random"
     );
     const data = await response.json();
-    console.log(data['value']);
     setPosts(data['value']);
   };
 
   useEffect(() => {
+    console.log("Updating request")
     fetchPost();
   }, []);
   return (
