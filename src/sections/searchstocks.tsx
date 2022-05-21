@@ -9,7 +9,7 @@ export default function StockSearch() {
   const [inputValue, setInputValue] = useState('')
 
 
-  function formatStockDisplay(resultArray) {
+  function formatStockDisplay(resultArray=[]) {
     const listSymbols = resultArray.map((symbol) =>
       <Heading>{symbol[0]} {" - "} {symbol[1]}</Heading>
       );
