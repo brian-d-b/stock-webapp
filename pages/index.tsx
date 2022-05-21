@@ -8,7 +8,7 @@ import SearchStocks from "../src/sections/searchstocks";
 
 const Home: NextPage = () => (
   <Container maxWidth = "container.lg" padding={0}>
-    <Heading>Brian's Stock Webapp</Heading>
+    <Heading>Brians Stock Webapp</Heading>
     <Flex 
       h={{base: 'auto', md: "100vh"}}
       py={[0,10,20]}
