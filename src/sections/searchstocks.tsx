@@ -3,7 +3,7 @@ import { Divider, Container, Flex, VStack, Heading, Text, Input, Button } from "
 
 export default function StockSearch() {
   //var symbolArray = ['AAPL','GOLD','PLTM','MSFT','SLV','BTC-USD']
-  const [posts, setPosts] = useState<Element | undefined>();
+  const [posts, setPosts] = useState<Element[]>();
   const [symbols, SetSymbols] = useState(['AAPL','TSLA','GLD','GOLD'])
   const [inputValue, setInputValue] = useState('')
 
@@ -64,7 +64,7 @@ export default function StockSearch() {
       results.push([symbol,price]);
       console.log("pushing",results)
       const formattedResults = formatStockDisplay(results)  
-      if (i == numberOfStocks -1) {setPosts(formattedResults)}
+      if (i == numberOfStocks -1) {setPosts([formattedResults])}
     }
 
     }).catch(function (error=[]) {
