@@ -56,7 +56,7 @@ export default function StockSearch() {
 
      //Initializes the loop and creates an array to export data to [[symbol,price],[symbol,price],..]
      const numberOfStocks = symbols.length;
-     const results = [];
+     const results = [[]];
      //Starts the loop
     for (let i = 0; i < numberOfStocks; i++)
     {
