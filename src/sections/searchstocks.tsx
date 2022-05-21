@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Container, Flex, VStack, Heading, Text, Input, Button } from "@chakra-ui/react"
+import { Divider, Container, Flex, VStack, Heading, Text, Input, Button } from "@chakra-ui/react"
 
 export default function StockSearch() {
   //var symbolArray = ['AAPL','GOLD','PLTM','MSFT','SLV','BTC-USD']
-  var results = [];
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<Element>();
   const [symbols, SetSymbols] = useState(['AAPL','TSLA','GLD','GOLD'])
   const [inputValue, setInputValue] = useState('')
 
 
-  function formatStockDisplay(resultArray=[]) {
+  function formatStockDisplay(resultArray : any[]=[]) {
     const listSymbols = resultArray.map((symbol) =>
       <Heading>{symbol[0]} {" - "} {symbol[1]}</Heading>
       );
@@ -56,7 +55,7 @@ export default function StockSearch() {
 
      //Initializes the loop and creates an array to export data to [[symbol,price],[symbol,price],..]
      const numberOfStocks = symbols.length;
-     const results = [[]];
+     const results:any[] = [];
      //Starts the loop
     for (let i = 0; i < numberOfStocks; i++)
     {
@@ -68,7 +67,7 @@ export default function StockSearch() {
       if (i == numberOfStocks -1) {setPosts(formattedResults)}
     }
 
-    }).catch(function (error) {
+    }).catch(function (error=[]) {
       console.error(error);
     });
   };
@@ -97,7 +96,7 @@ export default function StockSearch() {
       h="full"
       p={10}
       spacing={10}
-      alignItems="flex-start"
+      alignItems="center"
       bg={'gray.200'}
     >
     
@@ -105,12 +104,16 @@ export default function StockSearch() {
       <Heading>Get Stock Price</Heading>
       <Text>Enter in ticker symbol to get stock price.</Text>
     </VStack>
-    <div className="App">
-    <p> {posts} </p>
+
+    
+    <VStack>{posts}</VStack>
+
+    <Divider/>
+    <VStack align={'center'}>
       <Text>Search for stock prices, separate by commas</Text>
       <Input placeholder='AAPL,MSFT,GLD' value={inputValue} onChange={e => setInputValue(e.target.value)}></Input>
       <Button onClick={updatePost}>Submit</Button>
-    </div>
+    </VStack>
     </VStack>
   );
 }
