@@ -64,7 +64,7 @@ export default function StockSearch() {
       results.push([symbol,price]);
       console.log("pushing",results)
       const formattedResults = formatStockDisplay(results)  
-      if (i == numberOfStocks -1) {setPosts([formattedResults])}
+      if (i == numberOfStocks -1) {setPosts(formattedResults)}
     }
 
     }).catch(function (error=[]) {
