@@ -3,7 +3,7 @@ import { Divider, Container, Flex, VStack, Heading, Text, Input, Button } from "
 
 export default function StockSearch() {
   //var symbolArray = ['AAPL','GOLD','PLTM','MSFT','SLV','BTC-USD']
-  const [posts, setPosts] = useState<Element>();
+  const [posts, setPosts] = useState<Element | undefined>();
   const [symbols, SetSymbols] = useState(['AAPL','TSLA','GLD','GOLD'])
   const [inputValue, setInputValue] = useState('')
 
