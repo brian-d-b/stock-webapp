@@ -4,8 +4,7 @@ import { Text, Container, Flex, Heading} from "@chakra-ui/layout";
 import type { NextPage } from "next";
 import Cart from "../src/sections/cart";
 import Details from "../src/sections/details";
-import StockDisplay from "../src/sections/stockdisplay";
-import StockInput from "../src/sections/stockinput";
+import SearchStocks from "../src/sections/searchstocks";
 
 const Home: NextPage = () => (
   <Container maxWidth = "container.lg" padding={0}>
@@ -14,8 +13,8 @@ const Home: NextPage = () => (
       h={{base: 'auto', md: "100vh"}}
       py={[0,10,20]}
       direction={{base: 'column-reverse', md: 'row'}}>
-    <StockDisplay/>
-    <StockInput/>
+    <SearchStocks/>
+    <Cart/>
     </Flex>
     
   </Container>
