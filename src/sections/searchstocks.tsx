@@ -1,20 +1,52 @@
 import React, { useState, useEffect } from "react";
-import { Divider, Container, Flex, VStack, Heading, Text, Input, Button } from "@chakra-ui/react"
+import { Divider, Center, GridItem, SimpleGrid, Tbody, Td, TableCaption, ListIcon, Show, Hide, TableContainer, Table, Tr, Th, Thead, List, ListItem, Box, Container, Flex, VStack, Heading, Text, Input, Button } from "@chakra-ui/react"
+import { SunIcon, ArrowUpIcon, ArrowForwardIcon, ArrowDownIcon, UpDownIcon } from '@chakra-ui/icons'
 
 export default function StockSearch() {
-  //var symbolArray = ['AAPL','GOLD','PLTM','MSFT','SLV','BTC-USD']
-  const [posts, setPosts] = useState(<Text></Text>);
-  const [symbols, SetSymbols] = useState(['AAPL','TSLA','GLD','GOLD'])
+  //This sets the react hook for the output of stock data
+  const [posts, setPosts] = useState(<Container></Container>);
+  //This sets the react hook for symbols to be AAPL, TSLA, GOLD, SLV. Updated via user input
+  const [symbols, SetSymbols] = useState(['AAPL','TSLA','GOLD','SLV','UUUU','KO',])
+    //This sets the react hook for the text-input for stock search text box
   const [inputValue, setInputValue] = useState('')
 
 
+  //This function is what returns the formatted stock output seen on the screen
   function formatStockDisplay(resultArray : any[]=[]) {
+
+    function priceSymbol(stonkPriceChange=0.0) {
+      if (stonkPriceChange < 0.0) {return(<ArrowDownIcon boxSize='20px'></ArrowDownIcon>)}
+      else if (stonkPriceChange > 0.0) {return(<ArrowUpIcon boxSize='20px'></ArrowUpIcon>)}
+      else if (stonkPriceChange == 0.0) {return(<ArrowForwardIcon boxSize='20px'></ArrowForwardIcon>)}
+    }
+
     const listSymbols = resultArray.map((symbol) =>
-      <Heading>{symbol[0]} {" - "} {symbol[1]}</Heading>
+          <Tr><Td><Text fontSize='2xl'>{symbol[0]}</Text></Td><Td><Text fontSize='2xl'>{symbol[1]}$</Text></Td><Td><Text fontSize='2xl'>{symbol[2]}%</Text></Td><Td>{priceSymbol(symbol[2])}</Td></Tr>
+
       );
-      return (<ul>{listSymbols}</ul>)
+
+    const listySymbols = (
+      <TableContainer>
+        <Table variant='simple' rowGap='40px'>
+          <TableCaption><Text fontSize='xl'>Thanks for using my stonk lookup</Text><table></table></TableCaption>
+          <Thead>
+            <Th><Text fontSize='xl'>Symbol</Text></Th>
+            <Th><Text fontSize='xl'>Price</Text></Th>
+            <Th><Text fontSize='xl'>Daily Change</Text></Th>
+            <Th><UpDownIcon boxSize='20px'></UpDownIcon></Th>
+          </Thead>
+          <Tbody>
+            {listSymbols}
+          </Tbody>
+        </Table>
+      </TableContainer>
+    )
+
+
+      return (<Show breakpoint="(min-width: 400px"><Box>{listySymbols}</Box></Show>)
   }
 
+  //This function will edit the GET request to request for the user-provided stocks
   function formatStockURL() {
     console.log("Formatting symbols for: ", {symbols})
     const baseURL = 'https://yfapi.net/v6/finance/quote?region=US&lang=en&symbols=';
@@ -37,6 +69,7 @@ export default function StockSearch() {
     }
   }
 
+  //Each time the button is pressed, or when the page is first loaded, this grabs the API data
   const fetchPost = async () => { 
     var axios = require("axios").default;
     var options = {
@@ -61,7 +94,9 @@ export default function StockSearch() {
     {
       const symbol = response['data']['quoteResponse']['result'][i]['symbol'];
       const price = response['data']['quoteResponse']['result'][i]['regularMarketPrice'];
-      results.push([symbol,price]);
+      const dailychangetemp = response['data']['quoteResponse']['result'][i]['regularMarketChangePercent']
+      const dailychange = parseFloat(dailychangetemp).toFixed(2);
+      results.push([symbol,price,dailychange]);
       console.log("pushing",results)
       const formattedResults = formatStockDisplay(results)  
       if (i == numberOfStocks -1) {setPosts(formattedResults)}
@@ -92,14 +127,12 @@ export default function StockSearch() {
 
 
   return (
-
+    <Box>
     <VStack
-      w="full"
-      h="full"
-      p={10}
+      p={5}
       spacing={10}
       alignItems="center"
-      bg={'gray.200'}
+      bg={'teal.100'}
     >
     
     <VStack>
@@ -108,14 +141,17 @@ export default function StockSearch() {
     </VStack>
 
     
-    <VStack>{posts}</VStack>
+    {posts}
 
     <Divider/>
     <VStack align={'center'}>
-      <Text>Search for stock prices, separate by commas</Text>
-      <Input placeholder='AAPL,MSFT,GLD' value={inputValue} onChange={e => setInputValue(e.target.value)}></Input>
-      <Button onClick={updatePost}>Submit</Button>
+      <SimpleGrid columns={1} spacingY='20px'>
+        <GridItem><Center><Text><b>Search for stock prices, separate by commas</b></Text></Center></GridItem>
+        <GridItem><Center><Input placeholder='AAPL,MSFT,GLD,TSLA' value={inputValue} onChange={e => setInputValue(e.target.value)}></Input></Center></GridItem>
+        <GridItem><Center><Button onClick={updatePost}>Submit</Button></Center></GridItem>
+      </SimpleGrid>
     </VStack>
     </VStack>
+    </Box>
   );
 }
