@@ -14,11 +14,11 @@ import { useBreakpointValue, Image } from '@chakra-ui/react';
 const Home: NextPage = () => (
 
     <Center>
-    <SimpleGrid columns={1} spacing='0px' minChildWidth='600px' maxWidth='full' width='full'>
-        <GridItem colSpan={2}>
+    <SimpleGrid columns={1} spacing='0px' maxWidth='full' width='full'>
+        <GridItem colSpan={1}>
         <Center><Header/></Center>
         </GridItem>
-        <GridItem colSpan={2}>
+        <GridItem colSpan={1}>
         <GridItem colSpan={1}>
             <SearchStocks/>
         </GridItem>
