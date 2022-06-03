@@ -11,8 +11,7 @@ const rawHTML = `
   <script type="text/javascript">
   new TradingView.widget(
   {
-  "width": 680,
-  "height": 320,
+  "autosize": true,
   "symbol": "ECONOMICS:USINTR",
   "timezone": "Etc/UTC",
   "theme": "dark",
@@ -37,8 +36,7 @@ const rawHTML2 = `
   <script type="text/javascript">
   new TradingView.widget(
   {
-  "width": 680,
-  "height": 320,
+  "autosize": true,
   "symbol": "INDEX:DXY",
   "timezone": "Etc/UTC",
   "theme": "dark",
@@ -63,8 +61,7 @@ const rawHTML3 = `
   <script type="text/javascript">
   new TradingView.widget(
   {
-  "width": 680,
-  "height": 320,
+  "autosize": true,
   "symbol": "ECONOMICS:USIRYY",
   "timezone": "Etc/UTC",
   "theme": "dark",
