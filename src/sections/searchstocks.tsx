@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Divider, Center, GridItem, SimpleGrid, Tbody, Td, TableCaption, ListIcon, Show, Hide, TableContainer, Table, Tr, Th, Thead, List, ListItem, Box, Container, Flex, VStack, Heading, Text, Input, Button } from "@chakra-ui/react"
+import { Divider, Center, GridItem, SimpleGrid, Tbody, Td, TableCaption, ListIcon, Show, Hide, TableContainer, Table, Tr, Th, Thead, HStack, List, ListItem, Box, Container, Flex, VStack, Heading, Text, Input, Button } from "@chakra-ui/react"
 import { SunIcon, ArrowUpIcon, ArrowForwardIcon, ArrowDownIcon, UpDownIcon } from '@chakra-ui/icons'
 
 export default function StockSearch() {
@@ -21,19 +21,17 @@ export default function StockSearch() {
     }
 
     const listSymbols = resultArray.map((symbol) =>
-          <Tr><Td><Text fontSize='2xl'>{symbol[0]}</Text></Td><Td><Text fontSize='2xl'>{symbol[1]}$</Text></Td><Td><Text fontSize='2xl'>{symbol[2]}%</Text></Td><Td>{priceSymbol(symbol[2])}</Td></Tr>
+          <Tr><Td><Text fontSize='2xl'>{symbol[0]}</Text></Td><Td><Text fontSize='2xl'>{symbol[1].toFixed(2)}$</Text></Td><Td><Center><HStack><Text fontSize='2xl'>{symbol[2]}%</Text>{priceSymbol(symbol[2])}</HStack></Center></Td></Tr>
 
       );
 
     const listySymbols = (
       <TableContainer>
         <Table variant='simple' rowGap='40px'>
-          <TableCaption><Text fontSize='xl'>Thanks for using my stonk lookup</Text><table></table></TableCaption>
           <Thead>
             <Th><Text fontSize='xl'>Symbol</Text></Th>
             <Th><Text fontSize='xl'>Price</Text></Th>
             <Th><Text fontSize='xl'>Daily Change</Text></Th>
-            <Th><UpDownIcon boxSize='20px'></UpDownIcon></Th>
           </Thead>
           <Tbody>
             {listSymbols}
@@ -127,31 +125,29 @@ export default function StockSearch() {
 
 
   return (
-    <Box>
     <VStack
-      p={5}
+      paddingY={5}
       spacing={10}
       alignItems="center"
       bg={'teal.100'}
     >
     
     <VStack>
-      <Heading>Get Stock Price</Heading>
+      <Heading>Get Stock Price 😎</Heading>
       <Text>Enter in ticker symbol to get stock price.</Text>
     </VStack>
 
     
     {posts}
 
-    <Divider/>
     <VStack align={'center'}>
       <SimpleGrid columns={1} spacingY='20px'>
         <GridItem><Center><Text><b>Search for stock prices, separate by commas</b></Text></Center></GridItem>
         <GridItem><Center><Input placeholder='AAPL,MSFT,GLD,TSLA' value={inputValue} onChange={e => setInputValue(e.target.value)}></Input></Center></GridItem>
         <GridItem><Center><Button onClick={updatePost}>Submit</Button></Center></GridItem>
+        <GridItem paddingY={3}></GridItem>
       </SimpleGrid>
     </VStack>
     </VStack>
-    </Box>
   );
 }

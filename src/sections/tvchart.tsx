@@ -1,4 +1,3 @@
-import { AdvancedChart } from "react-tradingview-embed";
 import { Divider, Box, Center, Container, Flex, VStack, Heading, Text, Input, Button } from "@chakra-ui/react"
 
 // Usefuls AdvancedChart,
@@ -92,12 +91,12 @@ export default function Appy() {
       bg={'gray.400'}
     >
 
-    <Center><Heading>USA Interest Rates</Heading></Center>
+    <Center><Heading>USA Interest Rates 🤔</Heading></Center>
     <Center><Text>To fight inflation, rates are currently in the process of being raised.</Text></Center>
     <Center><div dangerouslySetInnerHTML={{ __html: rawHTML }}></div></Center>
     <Divider></Divider>
 
-    <Center><Heading>Current Inflation Rate</Heading></Center>
+    <Center><Heading>Current Inflation Rate 😬</Heading></Center>
     <Center><Text>This shows dollar's current rate of inflation</Text></Center>
     <Center><div dangerouslySetInnerHTML={{ __html: rawHTML3 }}></div></Center>
 
