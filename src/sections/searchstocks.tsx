@@ -149,6 +149,7 @@ export default function StockSearch() {
         <GridItem><Center><Input placeholder='AAPL,MSFT,GLD,TSLA' value={inputValue} onChange={e => setInputValue(e.target.value)}></Input></Center></GridItem>
         <GridItem><Center><Button onClick={updatePost}>Submit</Button></Center></GridItem>
         <GridItem paddingY={3}></GridItem>
+        <Center><Text fontSize='sm'>Please use "Desktop Mode" if on Mobile!</Text></Center>
       </SimpleGrid>
     </VStack>
     </Box>
