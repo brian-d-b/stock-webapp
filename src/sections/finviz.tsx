@@ -1,9 +1,10 @@
 import type { NextPage } from "next";
 import { useColorModeValue, ListIcon, List, ListItem, Image, SimpleGrid, Box, Center, GridItem, useColorMode, Heading, Text, Button, Select, Container, Flex, VStack } from "@chakra-ui/react"
 import { CheckCircleIcon, SettingsIcon, ArrowUpIcon, ArrowForwardIcon, ArrowDownIcon, UpDownIcon } from '@chakra-ui/icons'
+import React, { useState, useEffect } from "react";
+
 
 const FinvizDisplay = () => {
-
   return (
     <Box 
     paddingY={25} 
@@ -25,14 +26,13 @@ const FinvizDisplay = () => {
           <Box paddingX='50px'>
           <Center><List spacing={1}>
             <ListItem><Text padding='15px'><ListIcon as={CheckCircleIcon} color='green.500'></ListIcon>
-            This image points to a Google Cloud Storage bucket that is updated each hour during
-            market hours (9:30AM - 4:00PM).
+            Selenium grabs this image from finviz.com every hour during marken open (9:30AM - 4:00PM).
             </Text></ListItem>
             <ListItem><Text padding='15px'><ListIcon as={CheckCircleIcon} color='green.500'></ListIcon>
-            Updated via a spare computer running selenium and uploading to Google Cloud Storage
+            Uploaded to Google CLoud Storage with timestamp
             </Text></ListItem>
             <ListItem><Text padding='15px'><ListIcon as={CheckCircleIcon} color='green.500'></ListIcon>
-            All images are also saved in a separate bucket with timestamp
+            Updates GCS Storage and also archives daily heatmap collection
             </Text></ListItem>
             <ListItem><Text padding='15px'><ListIcon as={SettingsIcon}></ListIcon>
             To-do: Add feature to scroll through heatmaps saved throughout the day
