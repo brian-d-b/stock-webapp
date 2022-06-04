@@ -131,6 +131,7 @@ export default function StockSearch() {
       bg={'teal.100'}
       border='40px'
       borderRadius='40px'
+      width='full'
     >
     
     <VStack paddingY='10px'>

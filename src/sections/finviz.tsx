@@ -8,7 +8,7 @@ const FinvizDisplay = () => {
     <Box 
     paddingY={25} 
     bgColor='blue.200' 
-    maxWidth='full'
+    width='full'
     border='40px'
     borderRadius='40px'
     >
