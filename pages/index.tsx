@@ -17,7 +17,7 @@ const Home: NextPage = () => (
     <div style={{ backgroundImage:`url(https://i.pinimg.com/736x/9f/3f/ef/9f3fefe825700bd6eaf0e307b016c381.jpg)`,backgroundSize:"contain"}}>
     <Center>
     <Box padding='5px'>
-    <SimpleGrid columns={1}>
+    <SimpleGrid columns={1} minChildWidth='full'>
         <GridItem colSpan={1}>
         <Center><Header/></Center>
         </GridItem>
