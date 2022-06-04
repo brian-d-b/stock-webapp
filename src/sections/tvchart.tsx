@@ -1,5 +1,6 @@
 import { Divider, Box, Center, Container, Flex, VStack, Heading, Text, Input, Button } from "@chakra-ui/react"
 
+
 // Usefuls AdvancedChart,
 // Forex Cross Rates Widget,
 // Cryptocurrency Market Widget
@@ -11,42 +12,20 @@ const rawHTML = `
   <script type="text/javascript">
   new TradingView.widget(
   {
-  "autosize": true,
-  "symbol": "ECONOMICS:USINTR",
-  "timezone": "Etc/UTC",
-  "theme": "dark",
-  "style": "1",
-  "locale": "en",
-  "toolbar_bg": "#f1f3f6",
-  "enable_publishing": false,
-  "range": "60M",
-  "allow_symbol_change": true,
-  "container_id": "tradingview_dcdc5"
-}
-  );
-  </script>
-</div>
-`;
-
-const rawHTML2 = `
-<div class="tradingview-widget-container">
-  <div id="tradingview_7fbd5"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/INDEX-DXY/" rel="noopener" target="_blank"><span class="blue-text">DXY Chart</span></a> by TradingView</div>
-  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-  <script type="text/javascript">
-  new TradingView.widget(
-  {
-  "autosize": true,
-  "symbol": "INDEX:DXY",
-  "timezone": "Etc/UTC",
-  "theme": "dark",
-  "style": "1",
-  "locale": "en",
-  "toolbar_bg": "#f1f3f6",
-  "enable_publishing": false,
-  "range": "60M",
-  "allow_symbol_change": true,
-  "container_id": "tradingview_7fbd5"
+    "autosize": true,
+    "symbol": "ECONOMICS:USINTR",
+    "timezone": "Etc/UTC",
+    "theme": "dark",
+    "style": "1",
+    "locale": "en",
+    "toolbar_bg": "#f1f3f6",
+    "enable_publishing": false,
+    "hide_top_toolbar": true,
+    "hide_legend": true,
+    "range": "60M",
+    "allow_symbol_change": true,
+    "save_image": false,
+    "container_id": "tradingview_d5c25"
 }
   );
   </script>
@@ -55,8 +34,8 @@ const rawHTML2 = `
 
 const rawHTML3 = `
 <div class="tradingview-widget-container">
-  <div id="tradingview_7fbd5"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/ECONOMICS-USIRYY/" rel="noopener" target="_blank"><span class="blue-text">DXY Chart</span></a> by TradingView</div>
+  <div id="tradingview_d5c25"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/ECONOMICS-USIRYY/" rel="noopener" target="_blank"><span class="blue-text">USIRYY Chart</span></a> by TradingView</div>
   <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
   <script type="text/javascript">
   new TradingView.widget(
@@ -69,9 +48,12 @@ const rawHTML3 = `
   "locale": "en",
   "toolbar_bg": "#f1f3f6",
   "enable_publishing": false,
+  "hide_top_toolbar": true,
+  "hide_legend": true,
   "range": "60M",
   "allow_symbol_change": true,
-  "container_id": "tradingview_7fbd5"
+  "save_image": false,
+  "container_id": "tradingview_d5c25"
 }
   );
   </script>
@@ -81,23 +63,27 @@ const rawHTML3 = `
 
 export default function Appy() {
   return (
-    <VStack
+    
+    <Box
       p={10}
-      spacing={5}
-      alignItems="center"
+      minWidth='500px'
       bg={'gray.400'}
+      border='40px'
+      borderRadius='40px'
     >
 
-    <Center><Heading>USA Interest Rates 🤔</Heading></Center>
-    <Center><Text>To fight inflation, rates are currently in the process of being raised.</Text></Center>
-    <Center><div dangerouslySetInnerHTML={{ __html: rawHTML }}></div></Center>
-    <Divider></Divider>
 
-    <Center><Heading>Current Inflation Rate 😬</Heading></Center>
-    <Center><Text>This shows dollar's current rate of inflation</Text></Center>
-    <Center><div dangerouslySetInnerHTML={{ __html: rawHTML3 }}></div></Center>
-
+    <Center><Heading paddingY='10px'>USA Interest Rates 🤔</Heading></Center>
+    <Center><Text paddingY='3px'>To fight inflation, rates are currently in the process of being raised.</Text></Center>
+    <Box></Box>
+    <div dangerouslySetInnerHTML={{ __html: rawHTML }} ></div>
     
-    </VStack>
+    <Box paddingY='20px'></Box>
+
+    <Center><Heading paddingY='10px'>Current Inflation Rate 😬</Heading></Center>
+    <Center><Text paddingY='10px'>This shows dollar's current rate of inflation based on the Consumer Price Index.</Text></Center>
+    <div dangerouslySetInnerHTML={{ __html: rawHTML3 }}></div>
+      
+    </Box>
   );
 }

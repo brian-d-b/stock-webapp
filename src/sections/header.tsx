@@ -11,6 +11,8 @@ const Header = () => {
       spacing={10}
       alignItems="center"
       bg={bgColor}
+      border='40px'
+      borderRadius='40px'
     >
 
 <Center>

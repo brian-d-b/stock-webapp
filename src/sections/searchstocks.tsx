@@ -125,29 +125,30 @@ export default function StockSearch() {
 
 
   return (
-    <VStack
-      paddingY={5}
-      spacing={10}
+    <Box
+      paddingY={10}
       alignItems="center"
       bg={'teal.100'}
+      border='40px'
+      borderRadius='40px'
     >
     
-    <VStack>
+    <VStack paddingY='10px'>
       <Heading>Get Stock Price 😎</Heading>
       <Text>Enter in ticker symbol to get stock price.</Text>
     </VStack>
 
     
-    {posts}
+    <Box paddingY='20px'><Center>{posts}</Center></Box>
 
     <VStack align={'center'}>
-      <SimpleGrid columns={1} spacingY='20px'>
-        <GridItem><Center><Text><b>Search for stock prices, separate by commas</b></Text></Center></GridItem>
+      <SimpleGrid columns={1} spacingY='10px'>
+        <GridItem paddingY='20px'><Center><Text><b>Search for stock prices, separate by commas</b></Text></Center></GridItem>
         <GridItem><Center><Input placeholder='AAPL,MSFT,GLD,TSLA' value={inputValue} onChange={e => setInputValue(e.target.value)}></Input></Center></GridItem>
         <GridItem><Center><Button onClick={updatePost}>Submit</Button></Center></GridItem>
         <GridItem paddingY={3}></GridItem>
       </SimpleGrid>
     </VStack>
-    </VStack>
+    </Box>
   );
 }
