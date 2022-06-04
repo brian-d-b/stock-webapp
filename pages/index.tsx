@@ -16,13 +16,23 @@ const Home: NextPage = () => (
 
     <div style={{ backgroundImage:`url(https://i.pinimg.com/736x/9f/3f/ef/9f3fefe825700bd6eaf0e307b016c381.jpg)`,backgroundSize:"contain"}}>
     <Center>
-    <Box paddingY='20px' width='full'>
-    <VStack>
+    <Box padding='5px' width='full'>
+    <SimpleGrid columns={1} minChildWidth='full' alignContent='center'>
+        <GridItem colSpan={1}>
         <Center><Header/></Center>
-    </VStack>
-    <VStack paddingY='20px'><SearchStocks/></VStack>
-    <VStack paddingY='20px'><TradingViewCharty/></VStack>
-    <VStack paddingY='20px'><FinvizDisplay/></VStack> 
+        </GridItem>
+        <GridItem colSpan={1}>
+        <GridItem colSpan={1} paddingY='20px'>
+            <SearchStocks/>
+        </GridItem>
+        <GridItem colSpan={1}>
+            <TradingViewCharty/>
+        </GridItem>
+        <GridItem colSpan={1} paddingY='20px'>
+            <FinvizDisplay/>
+        </GridItem>
+        </GridItem>
+    </SimpleGrid>    
     </Box>
     </Center>
 
