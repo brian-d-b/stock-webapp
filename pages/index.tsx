@@ -1,6 +1,6 @@
 //This is the main page for localhost
 
-import { Box, Divider, VStack, SimpleGrid, GridItem, Text, Center, Container, Flex, Heading, Grid} from "@chakra-ui/layout";
+import { Box, UnorderedList, ListItem, Divider, VStack, SimpleGrid, GridItem, Text, Center, Container, Flex, Heading, Grid} from "@chakra-ui/layout";
 import type { NextPage } from "next";
 import Cart from "../src/sections/cart";
 import Details from "../src/sections/details";
@@ -17,7 +17,7 @@ const Home: NextPage = () => (
     <div style={{ backgroundImage:`url(https://i.pinimg.com/736x/9f/3f/ef/9f3fefe825700bd6eaf0e307b016c381.jpg)`,backgroundSize:"contain"}}>
     <Center>
     <Box padding='5px'>
-    <SimpleGrid columns={1} paddingY='20px' maxWidth='full' width='full'>
+    <SimpleGrid columns={1}>
         <GridItem colSpan={1}>
         <Center><Header/></Center>
         </GridItem>
