@@ -66,7 +66,7 @@ export default function Appy() {
     
     <Box
       p={10}
-      minWidth='500px'
+      width='full'
       bg={'gray.400'}
       border='40px'
       borderRadius='40px'
