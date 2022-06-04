@@ -18,20 +18,26 @@ const Home: NextPage = () => (
     <Center>
     <Box padding='5px' width='full'>
     <SimpleGrid columns={1} minChildWidth='full' alignContent='center'>
+        <Center>
         <GridItem colSpan={1}>
         <Center><Header/></Center>
         </GridItem>
-        <GridItem colSpan={1}>
-        <GridItem colSpan={1} paddingY='20px'>
+        </Center>
+        <Center>
+        <GridItem colSpan={1} paddingY='20px' maxWidth='800px' width='full'>
             <SearchStocks/>
         </GridItem>
-        <GridItem colSpan={1}>
+        </Center>
+        <Center>
+        <GridItem colSpan={1} maxWidth='800px' width='full'>
             <TradingViewCharty/>
         </GridItem>
-        <GridItem colSpan={1} paddingY='20px'>
+        </Center>
+        <Center>
+        <GridItem colSpan={1} paddingY='20px' maxWidth='800px' width='full'>
             <FinvizDisplay/>
         </GridItem>
-        </GridItem>
+        </Center>
     </SimpleGrid>    
     </Box>
     </Center>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Divider, Center, GridItem, SimpleGrid, Tbody, Td, TableCaption, ListIcon, Show, Hide, TableContainer, Table, Tr, Th, Thead, HStack, List, ListItem, Box, Container, Flex, VStack, Heading, Text, Input, Button } from "@chakra-ui/react"
 import { SunIcon, ArrowUpIcon, ArrowForwardIcon, ArrowDownIcon, UpDownIcon } from '@chakra-ui/icons'
 
+
 export default function StockSearch() {
   //This sets the react hook for the output of stock data
   const [posts, setPosts] = useState(<Container></Container>);
