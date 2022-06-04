@@ -14,14 +14,14 @@ const FinvizDisplay = () => {
     >
 
     <Center>
-      <SimpleGrid columns={1} maxWidth='full' width='full'>
+      <SimpleGrid columns={1} maxWidth='full'>
         <GridItem paddingY={25}>
           <Center><Heading>Current Finviz SNP500 Heatmap 🤩</Heading></Center>
         </GridItem>
         <GridItem paddingY={5}>
           <Center><Box padding='10px'><Image src="https://storage.googleapis.com/current-finviz-image/current.png"></Image></Box></Center>
         </GridItem>
-        <GridItem>
+        <GridItem width='full'>
           <Box paddingX='50px'>
           <Center><List spacing={1}>
             <ListItem><Text padding='15px'><ListIcon as={CheckCircleIcon} color='green.500'></ListIcon>
