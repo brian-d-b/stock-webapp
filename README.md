@@ -9,5 +9,6 @@ Using Typescript, React, NextJS, Chakra-ui, and hosted using Docker and Google C
 
 
 ## Preview
-![image](https://user-images.githubusercontent.com/31077794/172039030-d9c24cb3-d7fa-44f4-ab8c-881a483e7240.png)
+![image](https://user-images.githubusercontent.com/31077794/172039067-db30121d-55c1-494f-9f50-5ea0f40622cd.png)
+240.png)
 
