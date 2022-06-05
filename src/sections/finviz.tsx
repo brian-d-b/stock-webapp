@@ -29,7 +29,7 @@ const FinvizDisplay = () => {
             Selenium grabs this image from finviz.com every hour during marken open (9:30AM - 4:00PM).
             </Text></ListItem>
             <ListItem><Text padding='15px'><ListIcon as={CheckCircleIcon} color='green.500'></ListIcon>
-            Uploaded to Google CLoud Storage with timestamp
+            Uploaded to Google Cloud Storage with timestamp
             </Text></ListItem>
             <ListItem><Text padding='15px'><ListIcon as={CheckCircleIcon} color='green.500'></ListIcon>
             Updates GCS Storage and also archives daily heatmap collection
