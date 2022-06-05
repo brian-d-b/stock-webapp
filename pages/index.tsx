@@ -2,8 +2,6 @@
 
 import { Box, UnorderedList, ListItem, Divider, VStack, SimpleGrid, GridItem, Text, Center, Container, Flex, Heading, Grid} from "@chakra-ui/layout";
 import type { NextPage } from "next";
-import Cart from "../src/sections/cart";
-import Details from "../src/sections/details";
 import SearchStocks from "../src/sections/searchstocks";
 import TradingViewCharty from "../src/sections/tvchart"
 import FinvizDisplay from "../src/sections/finviz";
