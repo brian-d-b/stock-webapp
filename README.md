@@ -7,4 +7,7 @@ Open [https://brian-webapp-bdxqngiw7q-uc.a.run.app/](https://brian-webapp-bdxqng
 Using Typescript, React, NextJS, Chakra-ui, and hosted using Docker and Google Cloud Run
 
 
-![image](https://user-images.githubusercontent.com/31077794/172038949-fa49abc9-184f-4d68-95a9-0d0cc39224d9.png)
+
+## Preview
+![image](https://user-images.githubusercontent.com/31077794/172039030-d9c24cb3-d7fa-44f4-ab8c-881a483e7240.png)
+
