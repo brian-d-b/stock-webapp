@@ -1,6 +1,6 @@
 ## Getting Started
 
-Open [https://brian-webapp-bdxqngiw7q-uc.a.run.app/](https://brian-webapp-bdxqngiw7q-uc.a.run.app/) with your browser to see the result.
+Open [https://brian-webapp-bdxqngiw7q-uc.a.run.app/](https://brian-webapp-bdxqngiw7q-uc.a.run.app/) with your browser to see the web-app.
 
 ## Learn More
 
