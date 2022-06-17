@@ -1,11 +1,13 @@
-## Getting Started
+## Stock-Webapp
 
-Open [https://brians-stock.app/](https://brians-stock.app/) with your browser to see the web-app.
+I created [https://brians-stock.app/](https://brians-stock.app/) as a quick, start-from-scratch project to learn React, Javascript, and more about cloud hosting by using Docker, Cloud Run, and Cloud Functions to create this website.
+
+The front-end is a little basic, but it gets the job done for now.
 
 ## Learn More
 
-Stock Price Grabber - Uses [Yahoo Finance API](https://www.yahoofinanceapi.com/)
-Finviz Uploader - Uses Selenium to upload the [finviz SNP500 Heatmap](https://finviz.com/map.ashx)
+- Stock Price Grabber - Uses [Yahoo Finance API](https://www.yahoofinanceapi.com/)
+- Finviz Uploader - Uses Selenium to upload the [finviz SNP500 Heatmap](https://finviz.com/map.ashx)
 
 
 Tradingview Indicators - Google Cloud function webhook triggered by Tradingview Alerts
