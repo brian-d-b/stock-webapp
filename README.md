@@ -1,6 +1,12 @@
 ## Stock-Webapp
 
-I created [https://brians-stock.app/](https://brians-stock.app/) as a quick, start-from-scratch project to learn React, Javascript, and more about cloud hosting by using Docker, Cloud Run, and Cloud Functions to create this website.
+I created [https://brians-stock.app/](https://brians-stock.app/) as a quick, start-from-scratch project to learn:
+- **Javascript,Typescript, and React**
+- **Google Cloud** Run, Functions, and Storage
+- **Docker**
+- **DNS Records** (Mapping the Container to -> brians-stock.app)
+
+React, Javascript, and more about cloud hosting by using Docker, Cloud Run, and Cloud Functions to create this website.
 
 The front-end is a little basic, but it gets the job done for now.
 
