@@ -22,7 +22,9 @@ const TVIndicators = () => {
 <Center>
 <Center><Heading>TradingView Sectors Indicator</Heading></Center></Center>
 
-<iframe height='300px' width='600px' src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSxN0QEcFxIxxwV4kv1wCaz7wMUScJo4bfz2S_4AkLY0Ixp3OfePp_--6DjRX5xt6Sdl3k7CQVtXCK6/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+<Box width='full'>
+<iframe height='300px' width='100%' src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSxN0QEcFxIxxwV4kv1wCaz7wMUScJo4bfz2S_4AkLY0Ixp3OfePp_--6DjRX5xt6Sdl3k7CQVtXCK6/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+</Box>
 
 <Center><List spacing={1}>
     <ListItem><Text padding='15px'><ListIcon as={CheckCircleIcon} color='green.500'></ListIcon>
