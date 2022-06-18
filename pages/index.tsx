@@ -15,8 +15,8 @@ const Home: NextPage = () => (
 
     <div style={{ backgroundColor:'black'}}>
     <Center>
-    <Box padding='5px' width='full'>
-    <SimpleGrid columns={1} minChildWidth='full' alignContent='center'>
+    <Box padding='5px' width='full' backgroundColor='black'>
+    <SimpleGrid columns={1} minChildWidth='full' alignContent='center' backgroundColor='black'>
         <Center>
         <GridItem colSpan={1}>
         <Center><Header/></Center>
